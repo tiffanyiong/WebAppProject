@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Sign in</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<!--Icon-->
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/imeags/favicon.ico" type="image/x-icon">
+
+
+<!--Fonts-->
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<!--owl-carousel css-->
+<link rel="stylesheet" href="../css/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="../css/owl-carousel/owl.theme.css">
+<link rel="stylesheet" href="../css/owl-carousel/owl.transitions.css">
+
+<link rel="stylesheet"  href="../css/animations.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/color1.css">
+
+<script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body id="page-top" class="contact-us">
+<!-- Preloader -->
+<div class="preloader"></div>
+<header>
+	<!-- Navigation -->
+	<%- include partials/nav %>
+	<div id="page_header">
+		<div class="page_title">
+			<h3>Sign in</h3>
+			
+		</div>
+	</div>
+</header>
+    
+<section id="contact">
+    <div class="container">
+       
+               <form action="/users/signin" method="POST" class="validated-form" novalidate>
+                   <div class="row">
+                       <div class="col-xs-12 col-md-10 col-md-offset-1">
+                           <div class="form-holder">
+                               <div class="form-group">
+                                   <input type="text" class="form-control" placeholder="username *" id="username" name="username" required data-validation-required-message="Please enter your username.">
+                                   <p class="help-block text-danger"></p>
+                               </div>
+                               <div class="form-group">
+                                   <input type="password" class="form-control" placeholder="password *" id="password" name="password" required data-validation-required-message="Please enter your password.">
+                                   <p class="help-block text-danger"></p>
+                               </div>
+                               <div class="form-group">
+                               
+                               </div>
+                               <div id="success"></div>
+                               <button type="submit" class="btn btn-primary">Sign in</button>
+                           </div>
+                       </div>
+                   </div>
+               </form>
+           
+   </div>
+</section>
+<%- include partials/footer %>
+</body>
+</html>
