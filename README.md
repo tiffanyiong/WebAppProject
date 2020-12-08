@@ -1,5 +1,4 @@
-install express:
-npm install express
+install express:<br>npm install express
 npm install -g express-generator
 
 create ejs view web app:
