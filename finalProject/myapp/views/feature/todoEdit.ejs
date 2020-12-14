@@ -21,6 +21,7 @@
   
     <!-- for edit and delete icon -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
 <section id="contact">
     <div class="container">
        
@@ -56,23 +57,34 @@
                     <tbody>
                     
                       <% todoTask.forEach(details =>{ %>
+
                         <style>
                           input[type=checkbox]:checked + label{
                             opacity: 50%;
                             text-decoration: line-through;
                           }
                         </style>
+
+                        <% if(details._id == idTask) { %> 
+                        
+                            <form action="/feature/edit/<%= details.id %>" method="POST">
+                                <input type ="text" value="<%= details.task %>"  id="task" name="task">
+                                <button type="submit" class="btn btn-primary">Comfirm</button>
+                                <a href ="feature/todotask" ><button  class="btn btn-primary">Cancel</button></a>
+
+                            </form>
+                        <% } else  { %>
                        <tr>
                             
                             <td > <input type ="checkbox" id="<%=details.id%>" > <label for="<%=details.id%>">    <%=details.task%>  </label> 
                             </td>
                             
                             <td class="text-right">
-                             <a href="/feature/edit/<%=details.id %>"  ><i class='fas fa-edit' style='font-size:20px;color:#3FCE63'></i> </a>
-                              <a href="/feature/remove/<%=details.id %>"><i class='far fa-trash-alt' style='font-size:20px;color:#EB5F51'></i></a>
+                                <a href="/feature/edit/<%=details.id %>"  ><i class='fas fa-edit' style='font-size:20px;color:#3FCE63'></i> </a>
+                                <a href="/feature/remove/<%=details.id %>"><i class='far fa-trash-alt' style='font-size:20px;color:#EB5F51'></i></a>
                             </td>
                           </tr>
-
+                          <% } %>
                           <% }) %> 
                                            
                     </tbody>
@@ -83,7 +95,8 @@
            
    </div>
 </section>
+<%- include ../partials/footer %>
 
-   <%- include ../partials/footer %>
+
    </body>
     </html>

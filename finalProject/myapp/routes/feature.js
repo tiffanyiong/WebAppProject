@@ -1,4 +1,5 @@
 var express = require('express');
+const TodoTask = require('../models/TodoTask');
 var router = express.Router();
 const Task = require('../models/TodoTask')
 
@@ -37,6 +38,37 @@ router.post('/todotask', async(request,response) =>{
   }
 });
 
+//update
+router.get('/edit/:id', (req, res) => {
+  const id= req.params.id;
+  TodoTask.find({}, (err, task)=>{
+    res.render('feature/todoEdit', {todoTask: task, idTask: id});
+  })
+ 
+});
+
+router.post('/edit/:id', (req, res)=> {
+  const id = req.params.id;
+
+  TodoTask.findByIdAndUpdate(id,{ task:req.body.task }, err =>{
+  
+    if (err) return res.send(500, err);
+    res.redirect('todotask');
+  });
+})
+
+
+//delete
+
+
+router.get('/remove/:id', (req, res) => {
+  const id= req.params.id;
+  TodoTask.findByIdAndRemove(id, err =>{
+    if (err) return res.send(500, err);
+    res.redirect('/feature/todotask');
+  });
+ 
+});
 
 
 module.exports = router;
