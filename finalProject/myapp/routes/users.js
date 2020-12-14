@@ -4,6 +4,7 @@ const passport = require('passport');
 const catchAsync = require('../utils/catchAsync');
 const User = require('../models/user');
 
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('users', { title: 'Tiffany\'s page' });

@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+const bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index');
 
@@ -23,10 +24,12 @@ mongoose.connect('mongodb://localhost:27017/auth', {
     useFindAndModify: false
 });
 
+
+
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-    console.log("Database connected");
+    console.log("Auth Database connected");
 });
 
 
@@ -66,7 +69,7 @@ var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var featureRouter = require('./routes/feature');
-var todotaskRouter = require('./routes/feature/todotask')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -74,14 +77,17 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about',aboutRouter)
 app.use('/feature', featureRouter);
 app.use('/contact', contactRouter);
-app.use('/feature/todotask', todotaskRouter);
+
 
 
 

@@ -47,21 +47,56 @@
 <section id="contact">
     <div class="container">
        
-               <form action="" method="POST" class="validated-form" novalidate>
-                   <div class="row">
-                       <div class="col-xs-12 col-md-10 col-md-offset-1">
+               <form action="/feature/todotask" method="POST" class="validated-form" novalidate>
+                   <div class="row justify-content-md-center ">
+                       <div class="col-xs-12 col-md-5 col-md-offset-1">
+                        <h1>Add tasks</h1>
                            <div class="form-holder">
                                <div class="form-group">
-                                   <input type="text" class="form-control" placeholder="task" id="content" name="content" required data-validation-required-message="Please enter your username.">
+                                   <input type="text" class="form-control" placeholder="task" id="task" name="task" required data-validation-required-message="Please enter your task">
                                    <p class="help-block text-danger"></p>
                                </div>
                              
                                <div id="success"></div>
-                               <button type="submit" class="btn btn-primary">Submit</button>
+                               <button type="submit" class="btn btn-primary">Add</button>
                            </div>
+                           
                        </div>
                    </div>
+                   
                </form>
+         
+               <div class="col-xs-12 col-md-7 col-md-offset-1">
+                <h1>Your To Do List</h1>
+                   <div class="form-holder">
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">task</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td > This is the tasks</td>
+                      </tr>
+                      <!-- <% task.forEach(details =>{ %>
+                        <tr>
+                            <td > details.task</td>
+                          </tr>
+
+                          <% }) %> -->
+                      <tr>
+                        <th>2</th>
+                 
+                       
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+               </div>
+            </div>
+               
            
    </div>
 </section>
