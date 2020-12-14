@@ -22,12 +22,12 @@
     <!-- for edit and delete icon -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <section id="contact">
+
     <div class="container">
-       
                <form action="/feature/todotask" method="POST" class="validated-form" novalidate>
-                   <div class="row justify-content-md-center ">
-                       <div class="col-xs-12 col-md-5 col-md-offset-1">
-                        <h1>Add a task</h1>
+                   <div class="row justify-content-md-center">
+                       <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <h1 class=>Add a task</h1>
                            <div class="form-holder">
                                <div class="form-group">
                                    <input type="text" class="form-control" placeholder="task" id="task" name="task" required data-validation-required-message="Please enter your task">
@@ -40,16 +40,18 @@
                            
                        </div>
                    </div>
-                   
-               </form>
-         
-               <div class="col-xs-12 col-md-7 col-md-offset-1">
+                  </form>
+   
+
+              <div class="p">
+               <div class="col-xs-12 col-md-6 col-md-offset-3">
                 <h1>Your To Do List</h1>
                    <div class="form-holder">
                 <table class="table table-hover table-dark">
                     <thead>
                       <tr>
                         <th scope="col">Tasks</th>
+                        <th class="text-right">Created Date</th>
                         <th class="text-right"></th>
                       </tr>
                     </thead>
@@ -66,6 +68,7 @@
                             
                             <td > <input type ="checkbox" id="<%=details.id%>" > <label for="<%=details.id%>">    <%=details.task%>  </label> 
                             </td>
+                            <td class="text-right"> <%=details.timeCreated.toLocaleDateString() %></td>
                             
                             <td class="text-right">
                              <a href="/feature/edit/<%=details.id %>"  ><i class='fas fa-edit' style='font-size:20px;color:#3FCE63'></i> </a>
@@ -79,9 +82,7 @@
                   </table>
                </div>
             </div>
-               
-           
-   </div>
+
 </section>
 
    <%- include ../partials/footer %>
