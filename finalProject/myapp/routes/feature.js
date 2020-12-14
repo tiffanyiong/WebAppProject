@@ -13,23 +13,24 @@ router.get('/game', function(req, res) {
 });
 
 router.get('/todotask', function(req, res) {
-  // Task.find({},(err, task) => {
-    res.render('feature/todotask');
-  // })
+  Task.find({},(err, tasks) => {
+    res.render('feature/todotask',{ todoTask: tasks});
+  })
  
 });
 
 
 router.post('/todotask', async(request,response) =>{
   console.log(request.body);
-  let task = new Task({
+  let todoTask = new Task({
     task:request.body.task
   });
 
   try{
-    task = await task.save(); //it return an id
-    console.log(task.id);
-    response.redirect('todotask');
+    todoTask = await todoTask.save(); //it return an id
+    console.log(todoTask.id);
+    console.log('Sucessfully added');
+    response.redirect('todotask');    
   }catch(error){
     console.log(error);
     response.redirect('todotask');

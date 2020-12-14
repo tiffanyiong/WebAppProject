@@ -1,33 +1,8 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>To Do Task</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    
-    <!--Icon-->
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    
-    
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
-    
-    <!--owl-carousel css-->
-    <link rel="stylesheet" href="../css/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="../css/owl-carousel/owl.transitions.css">
-    
-    <link rel="stylesheet"  href="../css/animations.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/color1.css">
-    
-    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
+<!DOCTYPE html>
+<html>
+  
+<title>To Do Task</title>
+<%- include ../partials/head %>
     
     <body id="page-top" class="contact-us">
     <!-- Preloader -->
@@ -43,7 +18,9 @@
         </div>
     </header>
 
-    
+  
+    <!-- for edit and delete icon -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <section id="contact">
     <div class="container">
        
@@ -72,26 +49,32 @@
                 <table class="table table-hover table-dark">
                     <thead>
                       <tr>
-                        <th scope="col">task</th>
-                       
+                        <th scope="col">Tasks</th>
+                        <th class="text-right"></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td > This is the tasks</td>
-                      </tr>
-                      <!-- <% task.forEach(details =>{ %>
-                        <tr>
-                            <td > details.task</td>
+                    
+                      <% todoTask.forEach(details =>{ %>
+                        <style>
+                          input[type=checkbox]:checked + label{
+                            opacity: 50%;
+                            text-decoration: line-through;
+                          }
+                        </style>
+                       <tr>
+                            
+                            <td > <input type ="checkbox" id="<%=details.id%>" > <label for="<%=details.id%>">    <%=details.task%>  </label> 
+                            </td>
+                            
+                            <td class="text-right">
+                              <i class='fas fa-edit' style='font-size:20px;color:#3FCE63'></i> 
+                              <i class='far fa-trash-alt' style='font-size:20px;color:#EB5F51'></i>
+                            </td>
                           </tr>
 
-                          <% }) %> -->
-                      <tr>
-                        <th>2</th>
-                 
-                       
-                      </tr>
-                     
+                          <% }) %> 
+                                           
                     </tbody>
                   </table>
                </div>
