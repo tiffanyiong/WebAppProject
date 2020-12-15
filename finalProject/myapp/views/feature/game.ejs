@@ -1,35 +1,9 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>To Do Task</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    
-    <!--Icon-->
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    
-    
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
-    
-    <!--owl-carousel css-->
-    <link rel="stylesheet" href="../css/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl-carousel/owl.theme.css">
-    <link rel="stylesheet" href="../css/owl-carousel/owl.transitions.css">
-    
-    <link rel="stylesheet"  href="../css/animations.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/color1.css">
-    
-    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    
-    <body id="page-top" class="contact-us">
+    <title>Game</title>
+    <%- include ../partials/head %>
+
+
     <!-- Preloader -->
     <div class="preloader"></div>
     <header>
@@ -37,14 +11,49 @@
         <%- include ../partials/nav %>
         <div id="page_header">
             <div class="page_title">
-                <h3>To Do Task</h3>
+                <h3>Game</h3>
                 
             </div>
         </div>
     </header>
+    <body>
 
+<style>
+    #screen {
+        display: block;
+        border: 2px solid black;
+        background-color: #ffffff;
+        margin: 0 auto;
+        width: 800px;
+        height: 480px;
+        margin-bottom: 3%;
+    }
     
- 
+</style>
+<div class="row text-center">
+   
+    <h1>Press Space Button to Play</h1>
+    
+  
+
+</div>
+
+<canvas id="screen"></canvas>
+<script src="../../js/bird.js"></script>
+<script src="../../js/obstacle.js"></script>
+<script src="../../js/game.js"></script>
+
+<div class="row text-center ">
+<div class="col-md-7">
+    <a href="/feature/todotask"><button class="btn btn-primary "> Previous </button></a>
+  </div>
+  <div class="col-md-3">
+    <a href="/feature/#"><button class="btn btn-primary ">Next:Video</button></a>
+  </div>
+  </div>
+</body>
+    
+   
+
    <%- include ../partials/footer %>
-   </body>
     </html>
