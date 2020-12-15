@@ -28,20 +28,42 @@
         height: 480px;
         margin-bottom: 3%;
     }
+    #playBtn{
+        width:200px;
+        height: 50px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+   
+        transform: translate(-50%, -50%);
+    }
+    #container{
+     
+  position: relative;
+
+    }
+   
     
 </style>
 <div class="row text-center">
    
-    <h1>Press Space Button to Play</h1>
+    <h4>Instruction: Press the Space Button to Play</h4>
+ 
     
-  
-
 </div>
 
-<canvas id="screen"></canvas>
+<div id="container">
+<canvas id="screen"> </canvas>
+
+<button  class="btn btn-primary" id="playBtn" onclick="playgame()"> Play Game</button>
+</div>
+  
+
 <script src="../../js/bird.js"></script>
 <script src="../../js/obstacle.js"></script>
 <script src="../../js/game.js"></script>
+
 
 <div class="row text-center ">
 <div class="col-md-7">
