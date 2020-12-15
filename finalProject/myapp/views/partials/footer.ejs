@@ -4,6 +4,19 @@
         <div class="row">
             
             <div class="col-md-12">
+                <ol class="breadcrumb"><li><a href="/">Home</a></li>
+           
+                    <li><a href="/feature/todotask">To Do List</a></li>
+                    <li><a href="/feature/game">Canvas Game</a></li>
+                    <li><a href="/feature/video">Video</a></li>
+                    <li> <a href="/contact">Contact Me</a></li> 
+                    <% if(currentUser) {%>
+                    <li><a href="/about">About</a></li></ol>
+                    <% }  else {%>
+                    </ol>
+                        <% } %>
+
+
                 <span class="copyright"> <em>Copyright &copy; 2020. Tiffany Iong
                     <!-- <a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> -->
                 </em></span>

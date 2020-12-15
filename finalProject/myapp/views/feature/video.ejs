@@ -1,0 +1,58 @@
+<head>
+    
+    <title>Video</title>
+    <%- include ../partials/head %>
+
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    <header>
+        <!-- Navigation -->
+        <%- include ../partials/nav %>
+        <div id="page_header">
+            <div class="page_title">
+                <h3>Video</h3>
+                
+            </div>
+        </div>
+    </header>
+    <body>
+
+<style>
+    #screen {
+        display: block;
+        border: 2px solid black;
+        background-color: #ffffff;
+        margin: 0 auto;
+        width: 800px;
+        height: 480px;
+        margin-bottom: 3%;
+    }
+    
+</style>
+<div class="row text-center">
+   
+
+    
+  
+
+
+
+
+<video width="800" controls>
+    <source src="../../video/wang.mp4" type="video/mp4">
+     </video>
+     <p>My Photography Video</p>
+    </div>
+<div class="row text-center ">
+<div class="col-md-7">
+    <a href="/feature/game"><button class="btn btn-primary "> Previous </button></a>
+  </div>
+ 
+  </div>
+</body>
+    
+   
+
+   <%- include ../partials/footer %>
+    </html>

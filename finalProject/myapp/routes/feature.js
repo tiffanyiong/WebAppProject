@@ -13,6 +13,10 @@ router.get('/game', function(req, res) {
   res.render('feature/game');
 });
 
+router.get('/video', function(req, res) {
+  res.render('feature/video');
+});
+
 router.get('/todotask', function(req, res) {
   Task.find({},(err, tasks) => {
     res.render('feature/todotask',{ todoTask: tasks});

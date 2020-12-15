@@ -12,10 +12,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav text-center">
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+                
                 <li><a href="/feature">Featured</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <% if(!currentUser) {%>
+                  
                     <li class="nav-item">
                   <a class="nav-link" href="/users/signin">Login</a>
                     </li>
@@ -26,6 +27,7 @@
                   <% } else {%>
                     </li>
                     <li class="nav-item">
+                      <li><a href="/about">About</a></li>
                   <a class="nav-link" href="/users/logout">Logout</a>
             
                   <% } %>
